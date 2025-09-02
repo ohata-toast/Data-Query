@@ -381,7 +381,7 @@ SELECT * FROM corona_facility_us
         * 상수 값으로의 할당 및 조건자(Predicate)가 존재할 경우에만 수행할 수 있습니다.
         * 산술 표현식, 함수 호출 및 상수가 아닌 값으로의 UPDATE문은 지원되지 않습니다.
         * 테이블의 모든 열을 동시에 업데이트할 수 없습니다.
-        * [상세 정보](https://trino.io/docs/476/connector/mysql.html#update)
+        * [상세 정보](https://trino.io/docs/476/connector/mysql.html#update-limitation)
 
 ### PostgreSQL 데이터 소스 쿼리 실행
 
@@ -398,7 +398,7 @@ SELECT * FROM corona_facility_us
         * 상수 값으로의 할당 및 조건자(Predicate)가 존재할 경우에만 수행할 수 있습니다.
         * 산술 표현식, 함수 호출 및 상수가 아닌 값으로의 UPDATE문은 지원되지 않습니다.
         * 테이블의 모든 열을 동시에 업데이트할 수 없습니다.
-        * [상세 정보](https://trino.io/docs/476/connector/postgresql.html#update)
+        * [상세 정보](https://trino.io/docs/476/connector/postgresql.html#update-limitation)
 
 ### Oracle 데이터 소스 쿼리 실행
 
@@ -414,7 +414,7 @@ SELECT * FROM corona_facility_us
         * 상수 값으로의 할당 및 조건자(Predicate)가 존재할 경우에만 수행할 수 있습니다.
         * 산술 표현식, 함수 호출 및 상수가 아닌 값으로의 UPDATE문은 지원되지 않습니다.
         * 테이블의 모든 열을 동시에 업데이트할 수 없습니다.
-        * [상세 정보](https://trino.io/docs/476/connector/oracle.html#update)
+        * [상세 정보](https://trino.io/docs/476/connector/oracle.html#update-limitation)
 
 ### EDB 데이터 소스 쿼리 실행
 
@@ -431,7 +431,7 @@ SELECT * FROM corona_facility_us
         * 상수 값으로의 할당 및 조건자(Predicate)가 존재할 경우에만 수행할 수 있습니다.
         * 산술 표현식, 함수 호출 및 상수가 아닌 값으로의 UPDATE문은 지원되지 않습니다.
         * 테이블의 모든 열을 동시에 업데이트할 수 없습니다.
-        * [상세 정보](https://trino.io/docs/476/connector/postgresql.html#update)
+        * [상세 정보](https://trino.io/docs/476/connector/postgresql.html#update-limitation)
 
 ### MariaDB 데이터 소스 쿼리 실행
 
@@ -447,7 +447,7 @@ SELECT * FROM corona_facility_us
         * 상수 값으로의 할당 및 조건자(Predicate)가 존재할 경우에만 수행할 수 있습니다.
         * 산술 표현식, 함수 호출 및 상수가 아닌 값으로의 UPDATE문은 지원되지 않습니다.
         * 테이블의 모든 열을 동시에 업데이트할 수 없습니다.
-        * [상세 정보](https://trino.io/docs/476/connector/mariadb.html#update)
+        * [상세 정보](https://trino.io/docs/476/connector/mariadb.html#update-limitation)
 
 
 ### Iceberg 데이터 소스 쿼리 실행
