@@ -1,4 +1,9 @@
 ## Data & Analytics > DataQuery > Release Notes
+### September 23, 2025
+#### Trino version Upgrade
+* Upgraded DataQuery to service based on Trino 476 version.
+* Made performance improvements and bug fixes for some queries.
+
 ### June 24, 2025
 #### Added Features
 * Added a visualization area for the cluster status metrics.
