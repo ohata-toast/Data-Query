@@ -133,7 +133,7 @@ The service is available through following procedures.
 
 * Query Editor is divided into Cluster area, Schema area, Saved query area, Editor area, and Result/Console execution area.
 
-<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2025-09/ko/dataquery_console_01.png"/>
+<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2025-09/en/dataquery_console_01.png"/>
 
 ### 1. Cluster Area
 
@@ -195,7 +195,7 @@ The service is available through following procedures.
     * ① Click Query History.
     * ② Additional query window is created where the corresponding query is entered.
 
-<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2025-09/ko/dataquery_console_02.png"/>
+<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2025-09/en/dataquery_console_02.png"/>
 
 * You can check the cluster status metrics.
 
