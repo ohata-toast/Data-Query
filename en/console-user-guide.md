@@ -1,11 +1,11 @@
-## Data & Analytics > DataQuery > Console User Guide
+# Data & Analytics > DataQuery > Console User Guide
 
 To use DataQuery service, you have to add a data source.
 The service is available through following procedures.
 
 * Add a data source to link
 * Start a cluster to reflect the data source
-* Run Queries from separate tool via Query Editor on Web Console or external access URL
+* Run Queries from separate tool via Query Editor on Console or external access URL
 
 ## Data Source
 
@@ -52,7 +52,7 @@ The service is available through following procedures.
     * It is MySQL Database access address.
     * Have to be entered in the format of **jdbc:mysql://[Host,ip]:[Port]?[Parameter]** 
     * If timezone processing is required, the serverTimezone parameter must be set.
-        * ex) jdbc:mysql://localhost:10000?**serverTimezone=Asia/Seoul**
+        * e.g., jdbc:mysql://localhost:10000?**serverTimezone=Asia/Seoul**
 * User ID
     * MySQL Account name to access.
 * Password
@@ -106,7 +106,7 @@ The service is available through following procedures.
     * The MariaDB database access address. 
     * Must be entered in the format **jdbc:mariadb://[host,ip]:[port]?[parameter]**.
     * If timezone processing is required, the serverTimezone parameter must be set. 
-        * ex) jdbc:mariadb://localhost:10000?**serverTimezone=Asia/Seoul** 
+        * e.g., jdbc:mariadb://localhost:10000?**serverTimezone=Asia/Seoul** 
     * User ID 
         * MariaDB account name to access. 
     * Password 
@@ -133,7 +133,7 @@ The service is available through following procedures.
 
 * Query Editor is divided into Cluster area, Schema area, Saved query area, Editor area, and Result/Console execution area.
 
-<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2025-09/en/dataquery_console_01.png"/>
+<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2026-03/ko/dataquery_console_01.png" alt="query editor screen"/>
 
 ### 1. Cluster Area
 
@@ -161,7 +161,7 @@ The service is available through following procedures.
 ### 4. Editor Area
 
 * You can create maximum 10 Query Editors by clicking **\+ Add Query**.
-* You can execute Query by clicking **Run** or typing **ctrl + enter**, and can check progress of running Query at the bottom of Editor and cause log in case of failure.
+* You can execute Query by clicking **Run** or typing **ctrl+enter**, and can check progress of running Query at the bottom of Editor and cause log in case of failure.
 * Click **Save Query** to save your favorite queries.
 * Supports automatic completion of data sources, schemas, tables, and column names collected while creating queries.
 
@@ -186,16 +186,19 @@ The service is available through following procedures.
 ### 5. Results/Console Execution Query Area
 
 * You can check the results of Query executed in Query Editor.
-    * Provides limited results, about 1 MB or about 5,000, depending on the size of the data.
-    * Query results can be downloaded maximum 30 MB.
-        * Directly link Trino (ex. JDBC, CLI) to obtain data for entire Query performance results. Refer to Setup Menu Guide.
-        * Query results can be downloaded maximum 7 days from the Query completion time. If Query runs at 13hr:53min:32sec on December 1st, you can download it no later than 13hr:53min:32sec on December 8th.
-    * Right-click mouse to execute copy and export query results from the console.
-* Provides list of queries executed by Query Editor.
+    * Provides query results of up to 30 MB.
+        * Results exceeding 30 MB cannot be viewed or downloaded.
+        * Connect to Trino directly (e.g., JDBC, CLI) to retrieve the full query result data. See the Settings menu guide.
+    * The results area loads query results in increments of 5,000 rows.
+        * If the results exceed 5,000 rows, click **Load More** to load additional rows.
+    * Click **Copy to Clipboard** to save the query results displayed in the results area to your clipboard.
+    * Query results are available for download for up to 7 days from the time the query completes. For example, if a query completes at 1:53:32 PM on December 1, the results can be downloaded until 1:53:32 PM on December 8.
+    * Right-click in the results area to copy or export console query results.
+    * Provides list of queries executed by Query Editor.
     * ① Click Query History.
     * ② Additional query window is created where the corresponding query is entered.
 
-<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2025-09/en/dataquery_console_02.png"/>
+<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2025-09/ko/dataquery_console_02.png" alt="query history screen"/>
 
 * You can check the cluster status metrics.
 
@@ -206,7 +209,7 @@ The service is available through following procedures.
 * Click the collapse button in rightmost column to check additional execution information for query, or click **Download** to download full execution information for query.
     * Downloaded file does not include the query results.
 
-<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_03_en.png"/>
+<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_03_ko.png" alt="query history screen"/>
 
 ## Settings
 
@@ -235,9 +238,9 @@ The service is available through following procedures.
 
 ### Run Object Storage Data Source Query
 
-* Queries for Object Storage data sources are based on Trino-Hive.
+* Object Storage data source queries are based on Trino-Hive.
     * Hive is solution to support SQL job processing in [Apache Hadoop](https://hive.apache.org/) distributed storage environments.
-* DataQuery uses S3-compatible layer for Object Storage access and requires use of s3a protocol when specifying path for data for Schemas or Tables (ex. s3a://example/test).
+* DataQuery uses S3-compatible layer for Object Storage access and requires use of s3a protocol when specifying path for data for Schemas or Tables (e.g., s3a://example/test).
 * Supports processing of Parquet, JSON, ORC, CSV, and Text types of Data on Object Storage.
 * Object Storage data source provides default Schema named Default, and you can work in the corresponding schema.
 > [Note]
@@ -266,9 +269,9 @@ The service is available through following procedures.
           * When entering the path of external_location data, the bucket (container) name must comply with [NHN Cloud Object Storage's Bucket Naming Rules](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_7).
 
 ``` sql
-# Managed Table Sample
+-- Managed Table Sample
  CREATE TABLE sample (...);
-# External Table Sample
+-- External Table Sample
  CREATE TABLE sample (...) WITH ( external_location = 's3a://<Bucket, Container name>/<Data Directory Path>/');
 ```
 
@@ -277,11 +280,11 @@ The service is available through following procedures.
     * To apply partitions to Tables or manipulate Partitions, the following query is required:
 
 ``` sql
-# Create by applying partition to the table
+-- Create by applying partition to the table
 CREATE TABLE default.sample (...) WITH ( partitioned_by = ARRAY['columna', 'columnb'],)
-# Query partition
+-- Query partition
 SELECT * FROM default"sample$partitions"
-# Control partition
+-- Control partition
 system.create_empty_partition(schema_name, table_name, partition_columns, partition_values)
 system.sync_partition_metadata(schema_name, table_name, mode, case_sensitive)
 system.register_partition(schema_name, table_name, partition_columns, partition_values, location)
@@ -289,7 +292,7 @@ system.register_partition(schema_name, table_name, partition_columns, partition_
 * Partition procedure
   * sync_partition_metadata
     * You can automatically register and delete partition values by inferring partition values from the paths of objects.
-      
+
       | Mode | Description                                                                                |
       | ----- |-----------------------------------------------------------------------------------|
       | ADD | Add a partition value when the partition value is not registered in the table and the Object Storage objects exist against the Hive partition path. |
@@ -308,7 +311,7 @@ system.register_partition(schema_name, table_name, partition_columns, partition_
     * At least one object must exist in the fifth parameter, location.
 * Restrictions
     * Table columns of CSV type are supported for VARCHAR type only.
-    * DataQuery uses S3-compatible layer for Object Storage access and requires use of s3a protocol when specifying path for data for schemas or tables (ex. s3a://example/test).
+    * DataQuery uses S3-compatible layer for Object Storage access and requires use of s3a protocol when specifying path for data for schemas or tables (e.g., s3a://example/test).
     * Data directory path object specified by external\_location in External Table have to be existed separately.
         * With the directory created separately in Object Storage, the data must be located in the corresponding directory for normal link.
         * If having issues with the processing, please contact the Customer Center.
@@ -321,7 +324,7 @@ system.register_partition(schema_name, table_name, partition_columns, partition_
 
 1. [Download](https://static.toastoven.net/prod_dataquery/files/facility-boundary-us-all.csv) the sample CSV file and upload to Object Storage.
 
-<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_04_en.png"/>
+<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_04_ko.png" alt="Object Storage upload screen"/>
 
 2. Obtain access keys, secret keys from Object Storage console.
 3. Enter Object Storage data source using access key, secret key, and endpoint of Object Storage.
@@ -346,7 +349,7 @@ CREATE TABLE corona_facility_us
     mode_of_transportation varchar,
     travel_time_threshold_minutes varchar,
     facility_catchment_boundary varchar
-) 
+)
 with (
     format = 'csv',
     external_location = 's3a://csv-test/corona-facility/'
@@ -355,7 +358,7 @@ with (
 
 6. Refresh the table to check if the table is added normally.
 
-<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_05_en.png" width=220/>
+<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_05_ko.png" width=220 alt="table refresh screen"/>
 
 7. Run the query from the table as follows.
 
@@ -369,7 +372,7 @@ SELECT * FROM corona_facility_us
 
 ### Execute MySQL Data Source Query
 
-* Queries for MySQL data sources are executed based on Trino-MySQL.
+* MySQL data source queries are executed based on Trino-MySQL.
 * MySQL data source schemas and tables are run and expressed based on lowercase names.
 * If you have tables with the same name in different cases, query execution and schema collection might not work properly.
 * Restrictions
@@ -385,7 +388,7 @@ SELECT * FROM corona_facility_us
 
 ### Execute PostgreSQL Data Source Query
 
-* Queries to PostgreSQL data sources are performed based on Trino-PostgreSQL.
+* PostgreSQL data source queries are performed based on Trino-PostgreSQL.
 * PostgreSQL data source schemas and tables are run and expressed based on lowercase names.
 * If you have tables with the same name in different cases, query execution and schema collection might not work properly.
 * Restrictions
@@ -402,7 +405,7 @@ SELECT * FROM corona_facility_us
 
 ### Execute Oracle Data Source Query
 
-* Queries to Oracle data sources are performed based on Trino-Oracle.
+* Oracle data source queries are performed based on Trino-Oracle.
 * Oracle data source schemas and tables are run and expressed based on lowercase names.
 * If you have tables with the same name in different cases, query execution and schema collection might not work properly.
 * Restrictions
@@ -418,7 +421,7 @@ SELECT * FROM corona_facility_us
 
 ### Execute EDB Data Source Query
 
-* Queries to the EDB data source are performed based on Trino-PostgreSQL.
+* EDB data source queries are performed based on Trino-PostgreSQL.
 * EDB data source schemas and tables are run and expressed based on lowercase names.
 * If you have tables with the same name in different cases, query execution and schema collection might not work properly.
 * Restrictions
@@ -435,7 +438,7 @@ SELECT * FROM corona_facility_us
 
 ### Execute MariaDB Data Source Query
 
-* Queries to the MariaDB data source are performed based on Trino-MariaDB. 
+* MariaDB data source queries are performed based on Trino-MariaDB. 
 * Schema and tables in MariaDB data source are operated and represented based on lowercase names. 
 * If there are tables with the same name with different case, query execution and schema collection may not work normally. 
 * Restrictions
@@ -452,7 +455,7 @@ SELECT * FROM corona_facility_us
 
 ### Run Iceberg Data Source Queries
 
-* Queries to the Iceberg data source are performed based on Trino-Iceberg.
+* Iceberg data source queries are performed based on Trino-Iceberg.
 * You can integrate with Iceberg table data that exists in Object Storage and for data in supported formats.
     * Supports data of type PARQUET (native format), ORC, and AVRO.
 * Uses S3-compatible layer for Object Storage access and requires use of s3a protocol when specifying path for data for Schemas or Tables (ex. s3a://example/test).
@@ -462,9 +465,9 @@ SELECT * FROM corona_facility_us
 * You can create them through the CREATE SCHEMA statement.
 
 ```sql
-# Create schema in the default path
+-- Create schema in the default path
 CREATE SCHEMA example_schema;
-# create schema in the specified path
+-- create schema in the specified path
 CREATE SCHEMA example_schema
 WITH (location = 's3a://my-bucket/example_schema/');
 ```
@@ -477,7 +480,7 @@ WITH (location = 's3a://my-bucket/example_schema/');
 
 ```sql
 CREATE TABLE example_table (c1 INTEGER, c2 DATE, c3 DOUBLE);
-## Specify attributes
+-- Specify attributes
 CREATE TABLE example_table (c1 INTEGER, c2 DATE, c3 DOUBLE)
 WITH (
     format = 'PARQUET',
@@ -529,7 +532,7 @@ WITH (
         * A snapshot of the current table
 
 ```sql
-## Get table properties
+-- Get table properties
 SELECT * FROM "test_table$properties"
 ```
 
@@ -612,14 +615,14 @@ ALTER TABLE test_table EXECUTE remove_orphan_files(retention_threshold => '7d')
   | recursive_directory | FAIL (default), TRUE, FALSE   | Behavior when paths below location can be recursively explored<br>FAIL => Causes the query to fail if the entered data file path is recursively traversable to a depth of 2 levels.<br> TRUE => Recursively explores all data file paths down the entered data file path.<br>FALSE => Ignores the entered data file path 2 levels deep. |
   |duplicate_file  | FAIL (default), SKIP, ADD     | Behavior when the data file to be registered is a duplicate of the data file of the already registered iceberg table<br>FAIL => The query will fail if there are duplicate data files compared to those already registered in the iceberg table.<br>SKIP => Ignore duplicate files.<br>ADD => Add a data file.           |
 ```sql
-## Add mybucket/a/path subdata file to example_table
-ALTER TABLE example.system.example_table 
+-- Add mybucket/a/path subdata file to example_table
+ALTER TABLE example.system.example_table
 EXECUTE add_files(location => 's3://my-bucket/a/path', format => 'PARQUET', recursive_directory => 'FAIL', duplicate_file => 'FAIL')
 ```
 * add_files_with_partition procedure
   * It also supports tables that define partition transforms.
   * The partition column type you want to register must be entered in the following format: `YYYY-MM-DD` for DATE, YYYY-MM-DD`HH` `:`mm:ss` for TIMESTAMP. If it is a TIMESTAMP with a timezone, the zoneId must be specified at the end, such as `YYYY-MM-DD HH:mm:ss Asia/Seoul`.
- 
+
     |Argument  | Supported value                    | Description                                                                                                                                                                                      |
     | --- |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     | location | Data file path                 | Path to the data file you want to add                                                                                                                                                                         |
@@ -629,7 +632,7 @@ EXECUTE add_files(location => 's3://my-bucket/a/path', format => 'PARQUET', recu
     | recursive_directory | FAIL (default), TRUE, FALSE   | Behavior when paths below location can be recursively explored<br>FAIL => Causes the query to fail if the entered data file path is recursively traversable to a depth of 2 levels.<br> TRUE => Recursively explores all data file paths down the entered data file path.<br>FALSE => Ignore paths 2 levels deep into the entered data file. |
     |duplicate_file  | FAIL (default), SKIP, ADD     | Behavior when the data file to be registered is a duplicate of the data file of the already registered iceberg table<br>FAIL => The query will fail if there are duplicate data files compared to those already registered in the iceberg table.<br>SKIP => Ignore duplicate files.<br>ADD => Add a data file.            |
 ```sql
-## ICEBERG table with partition column YEAR and DAY transformation applied
+-- ICEBERG table with partition column YEAR and DAY transformation applied
 ALTER TABLE example.system.example_table 
 EXECUTE add_files_with_partition(location => 's3://my-bucket/a/path', partition_columns => ARRAY['year'], partition_values => ARRAY['2024-11-21'], format => 'PARQUET', recursive_directory => 'TRUE', duplicate_file => 'FAIL')
 ```
@@ -667,7 +670,7 @@ EXECUTE add_files_with_partition(location => 's3://my-bucket/a/path', partition_
 
 * Setting Parameter
     * Access URL (Required) 
-        * Access URL provided on the Settings screen (ex. [https://x-x-x-x-x.kr1-cluster-dataquery.nhncloudservice.com](https://x-x-x-x-x.kr1-cluster-dataquery.nhncloudservice.com))
+        * Access URL provided on the Settings screen (e.g., [https://x-x-x-x-x.kr1-cluster-dataquery.nhncloudservice.com](https://x-x-x-x-x.kr1-cluster-dataquery.nhncloudservice.com))
     * ID (Required)
         * ID provided on credentials screen
     * Password (Required)
@@ -695,7 +698,7 @@ jdbc:trino://${host}:${port}/${catalog}/${schema}
 
 * Setting parameters
     * host (Required)
-        * In the connection URL provided in the setting screen, enter the rest except for `https://` (ex . x-x-x-x-x.kr1-cluster-dataquery.nhncloudservice.com).
+        * In the connection URL provided in the setting screen, enter the rest except for `https://` (e.g., x-x-x-x-x.kr1-cluster-dataquery.nhncloudservice.com).
     * port (Required)
         * Enter 443.
     * catalog
