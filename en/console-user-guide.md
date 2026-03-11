@@ -133,7 +133,7 @@ The service is available through following procedures.
 
 * Query Editor is divided into Cluster area, Schema area, Saved query area, Editor area, and Result/Console execution area.
 
-<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2026-03/ko/dataquery_console_01.png" alt="query editor screen"/>
+<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2026-03/en/dataquery_console_01.png"/>
 
 ### 1. Cluster Area
 
@@ -198,7 +198,7 @@ The service is available through following procedures.
     * ① Click Query History.
     * ② Additional query window is created where the corresponding query is entered.
 
-<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2025-09/ko/dataquery_console_02.png" alt="query history screen"/>
+<img src="https://static.toastoven.net/prod_dataquery/console-user-guide/2025-09/en/dataquery_console_02.png"/>
 
 * You can check the cluster status metrics.
 
@@ -209,7 +209,7 @@ The service is available through following procedures.
 * Click the collapse button in rightmost column to check additional execution information for query, or click **Download** to download full execution information for query.
     * Downloaded file does not include the query results.
 
-<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_03_ko.png" alt="query history screen"/>
+<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_03_en.png"/>
 
 ## Settings
 
@@ -324,7 +324,7 @@ system.register_partition(schema_name, table_name, partition_columns, partition_
 
 1. [Download](https://static.toastoven.net/prod_dataquery/files/facility-boundary-us-all.csv) the sample CSV file and upload to Object Storage.
 
-<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_04_ko.png" alt="Object Storage upload screen"/>
+<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_04_en.png"/>
 
 2. Obtain access keys, secret keys from Object Storage console.
 3. Enter Object Storage data source using access key, secret key, and endpoint of Object Storage.
@@ -358,7 +358,7 @@ with (
 
 6. Refresh the table to check if the table is added normally.
 
-<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_05_ko.png" width=220 alt="table refresh screen"/>
+<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_05_en.png"/>
 
 7. Run the query from the table as follows.
 
