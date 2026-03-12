@@ -324,7 +324,7 @@ system.register_partition(schema_name, table_name, partition_columns, partition_
 
 1. サンプルCSVファイルを[ダウンロード](https://static.toastoven.net/prod_dataquery/files/facility-boundary-us-all.csv)してObject Storageにアップロードします。
 
-<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_04_en.png" alt="Object Storage 업로드 화면"/>
+<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_04_en.png" alt="Object Storage アップロード画面"/>
 
 2. Object Storageコンソールでアクセスキー、シークレットキーを発行します。
 3. Object Storageのアクセスキー、シークレットキー、エンドポイントを利用してObject Storageデータソースを入力します。
@@ -707,3 +707,4 @@ jdbc:trino://${host}:${port}/${catalog}/${schema}
 * 接続情報例
     * jdbc:trino://test-dataquery-domain-12345abcd.kr1-cluster-dataquery.nhncloudservice.com:443/catalog/schema
 * 詳細は[Trino JDBCガイドページ](https://trino.io/docs/476/client/jdbc.html)をご覧ください。
+
