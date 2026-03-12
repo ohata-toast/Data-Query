@@ -358,7 +358,7 @@ with (
 
 6. テーブルが正常に追加されたことを確認するためにテーブルを更新します。
 
-<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_05_en.png" width=220 alt="테이블 새로 고침 화면"/>
+<img src="https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_dataquery/dataquery_console_05_en.png" width=220 alt="テーブル更新画面"/>
 
 7. 該当テーブルで、次のようにクエリを実行します。
 
@@ -707,4 +707,5 @@ jdbc:trino://${host}:${port}/${catalog}/${schema}
 * 接続情報例
     * jdbc:trino://test-dataquery-domain-12345abcd.kr1-cluster-dataquery.nhncloudservice.com:443/catalog/schema
 * 詳細は[Trino JDBCガイドページ](https://trino.io/docs/476/client/jdbc.html)をご覧ください。
+
 
