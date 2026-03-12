@@ -1,4 +1,4 @@
-# Data & Analytics > DataQuery > コンソール使用ガイド
+## Data & Analytics > DataQuery > コンソール使用ガイド
 
 DataQueryサービスを使用するには、必ずデータソースを追加する必要があります。
 以下のような手順でサービスを使用できます。
