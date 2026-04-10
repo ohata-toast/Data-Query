@@ -709,3 +709,23 @@ jdbc:trino://${host}:${port}/${catalog}/${schema}
 * 접속 정보 예시
     * jdbc:trino://test-dataquery-domain-12345abcd.kr1-cluster-dataquery.nhncloudservice.com:443/catalog/schema
 * 더 자세한 정보는 [Trino JDBC 가이드 페이지](https://trino.io/docs/476/client/jdbc.html)를 참고하세요.
+
+### Cloud Scheduler 연결
+
+* Cloud Scheduler 서비스의 **예약된 쿼리** 템플릿을 사용하여 쿼리를 원하는 일정에 실행할 수 있습니다.
+
+| 파라미터 | 필수 | 설명 |
+| ----- | --- | ---- |
+| Appkey | O | DataQuery 서비스의 Appkey |
+| User Access Key | O | NHN Cloud가 발급하는 User Access Key |
+| Secret Access Key | O | NHN Cloud가 발급하는 Secret Access Key |
+| 쿼리문 | O | 실행하고자 하는 쿼리 본문 |
+
+!!! tip "알아두기"
+    * **예약된 쿼리**의 결과는 UI에 출력되거나, API 응답에 포함되지 않습니다. 쿼리의 결과가 필요한 경우 CTAS, 혹은 INSERT SELECT 쿼리를 사용하여 별도의 테이블에 저장해야 합니다.
+    * User Access Key 및 Secret Access Key는 **API 보안 설정** > **User Access Key 생성**을 사용하여 발급할 수 있습니다.
+    * 대상 템플릿을 사용한 일정 생성은 사용자 가이드의 **Application Service > Cloud Scheduler > 콘솔 사용 가이드**를 참고해주세요.
+
+!!! danger "주의"
+    * 쿼리를 실행하기 위해서는 클러스터가 켜져 있어야 합니다.
+    * User Access Key, Secret Access Key는 등록한 Appkey에 권한이 있는 계정을 사용하여 발급해야 합니다.
