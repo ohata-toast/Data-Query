@@ -1,4 +1,11 @@
 ## Data & Analytics > DataQuery > Release Notes
+### 2026. 03. 24.
+#### Feature Updates
+* Improved the console query result display policy
+  * Removed the limit that restricted console query results to within 1 MB and 5,000 rows.
+  * Made improvements so that console query results can now display up to 30 MB.
+  * Added buttons to view and copy console query results.
+
 ### September 23, 2025
 #### Trino version Upgrade
 * Upgraded DataQuery to service based on Trino 476 version.
